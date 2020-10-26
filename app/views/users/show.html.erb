@@ -2,16 +2,14 @@
   <div class="container">
     <div class="user">
 
-      <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
-      <p><%= @user.id %></p>
+      <p>ユーザー名：<%= @user.name %></p>
+      <p>メールアドレス：<%= @user.email %></p>
+      <p>ユーザーID：<%= @user.id %></p>
+      <p>家族ID：<%= @user.family_id %></p>
 
     </div>
 
-    <ul class="user-tabs">
-      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to("いいね！", "/users/#{@user.id}/likes") %></li>
-    </ul>
+    <%= link_to("戻る", "/blogs/index/#{@current_user.id}") %>
 
   </div>
 </div>

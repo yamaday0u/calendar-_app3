@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ユーザー</strong>
+  <%= @blog.user_name %>
+</p>
+
+<p>
+  <strong>タイトル</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>開始日時</strong>
+  <%= @blog.start_time.strftime("%Y-%m-%d %H:%M") %>
+  <br>
+  <strong>終了日時</strong>
+  <%= @blog.end_time.strftime("%Y-%m-%d %H:%M") %>
+</p>
+
+<p>
+  <strong>内容</strong>
+  <%= @blog.content %>
+</p>
+
+<%= link_to '編集', edit_blog_path(@blog) %> |
+<%= link_to("戻る", "/blogs/index/#{@current_user.id}") %>

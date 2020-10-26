@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      blog: 日記
+    attributes:
+      user:
+        id: ID
+        name: ユーザー名
+        email: メールアドレス
+        password_digest: パスワード
+      blog:
+        title: タイトル
+        content: 内容
+        start_time: 開始日時
+        end_time: 終了日時
+        user_name: ユーザー名

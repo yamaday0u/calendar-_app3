@@ -1,0 +1,40 @@
+<div class="">
+  <div class="container">
+    <div class="form-heading">新規家族登録</div>
+    <div class="form users-form">
+      <div>最初に、家族（グループ）を登録してください</div>
+      <div class="form-body">
+        <% @family.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <%= form_tag("/families/create")do %>
+          <p>家族名</p>
+          <input name="family_name" value="<%= @family.family_name %>">
+          <p>家族パスワード</p>
+          <input type="password" name="family_password" value="<%= @family.family_password %>">
+          <input type="submit" value="家族を新規登録">
+        <% end %>
+      </div>
+
+      <br>
+
+      <div>すでに登録している家族がいる方はこちらに家族名と家族パスワードを入力してください</div>
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <%= form_tag("/families/search")do %>
+          <p>家族名</p>
+          <input name="family_name" value="<%= @family.family_name %>">
+          <p>家族パスワード</p>
+          <input type="password" name="family_password" value="<%= @family.family_password %>">
+          <input type="submit" value="家族を検索">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<%= form_with(model: @blog, local: true) do |form| %>
+
+  <div class="title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="time">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+    <br>
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <%= form.hidden_field :user_name, :value => @current_user.name %>
+  <%= form.hidden_field :user_id, :value => @current_user.id %> <!--ログイン中のユーザーのユーザー名とidを送信する-->
+  <%= form.hidden_field :family_id, :value => @current_user.family_id %> <!--ログイン中のユーザーのユーザー名とidを送信する-->
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+  <%= link_to("戻る", "/blogs/index/#{@current_user.id}") %>
+
+<% end %>

@@ -1,0 +1,19 @@
+<div class="main user-show">
+  <div class="container">
+    <div class="user">
+
+      <p>家族ID：<%= @family.id %></p>
+      <p>家族名：<%= @family.family_name %></p>
+      <% @users.each do |user| %>
+      <p>
+        ユーザーID：<%= user.id %>
+        <%= link_to("#{user.name}さん", "/users/#{@current_user.id}") %>
+      </p>
+      <% end %>
+
+    </div>
+
+    <%= link_to("戻る", "/blogs/index/#{@current_user.id}") %>
+
+  </div>
+</div>
